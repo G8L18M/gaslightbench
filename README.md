@@ -8,7 +8,7 @@ To start the project, install dependencies:
 pip install --upgrade anthropic openai inspect-ai python-dotenv ipywidgets matplotlib
 ```
 
-Before running the pipeline, set your OpenAI API key:
+Before running the pipeline, set your API key:
 
 **Windows (PowerShell)**
 
@@ -25,7 +25,7 @@ export OPENAI_API_KEY="<yourkey>"
 Run the evaluation:
 
 ```bash
-inspect eval src/inspect_eval.py --model <model_name> --limit <# of samples you want to check>
+inspect eval experiments/inspect_eval.py --model <model_name> --limit <# of samples you want to check>
 ```
 
-Replace `<model_name>` with the LLM you want to benchmark (e.g. `openai/gpt-4`, `anthropic/claude-3`).
+Replace `<model_name>` with the LLM you want to benchmark (e.g. `openai/gpt-4`, `anthropic/claude-3`). Alternatively replace inspect_eval.py with multiturn.py to run the multiturn.
