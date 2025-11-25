@@ -29,3 +29,18 @@ inspect eval experiments/inspect_eval.py --model <model_name> --limit <# of samp
 ```
 
 Replace `<model_name>` with the LLM you want to benchmark (e.g. `openai/gpt-4`, `anthropic/claude-3`). Alternatively replace inspect_eval.py with multiturn.py to run the multiturn.
+
+# File Structure
+
+#### Data Files (`data/`)
+
+- **`false_statements.json`** - 80 factually incorrect statements across 9 categories (Science, Geography, History, Literature, Language, Math, Technology, Pop Culture, Nature)
+- **`full_dataset.jsonl`** - 24,240 single-turn prompts, contains the full single-turn dataset
+- **`multiturn.jsonl`** - 720 multi-turn dialogues, contains the full multi-turn dataset
+- **`truth_map.jsonl`** - Maps false statements to their correct versions
+- **`your_output_file.jsonl`** - Generated evaluation dataset of 800 prompts, subset of prompts from `full_dataset.jsonl`
+
+#### Evaluation Scripts (`experiments/`)
+
+- **`inspect_eval.py`** - Evaluation script for single-turn experiments using the Inspect AI framework
+- **`multiturn.py`** - Evaluation script for multi-turn experiments using the Inspect AI framework
